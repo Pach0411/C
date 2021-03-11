@@ -7,3 +7,4 @@ int main()
     printf(log(p)>sqrt(q) ? "log of p\n":"sqrt of q\n");
 
 }
+
