@@ -4,3 +4,4 @@ int main() {
   for (i = 36; i >= 5; i = i - 3);
   printf("%d\n", i);
 }
+
