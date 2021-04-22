@@ -1,143 +1,180 @@
-//firstyou have to include the library "calc.h" in the "Homework_5.c"file, to run the program
+Agregar tambien el archvo .h para que funcione
+ Primero debes de poner la fila y despues la columna (separados de un espacio) like : 3 4
+ El tamaño del board ya esta definido y es de 10x10 
+ */
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+#include "library.h"
 
-#include <stdio.h>   
-#include <stdlib.h>  
-#include <ctype.h>   
-#include <assert.h>  
-#include "calc.h"
+int main() {
+  
+    int gameover = 0; // used to check if the game is over or not
+  
+    char uncovered_board[dimension][dimension];
+                                     
+    char current_board[dimension][dimension]; 
+                                   
+    int totalmoves; // stores the total moves left for the user before they win.
 
-#define MINA_ENCONTRADA 1
-#define ESPACIO_YA_DESCUBIERTO 2
-#define NINGUNO 3
-#define COLUMNS 10
-#define ROWS 10
-#define ESPACIO_SIN_DESCUBRIR '#'
-#define ESPACIO_DESCUBIERTO '*'
-#define MINA 'X'
-#define CANTIDAD_MINAS 5
-#define DEBUG 0   //IF YOU PUT 1 YOU CAN SEE ALL THE MINES//
+    int i,j;
+    int x,y;
 
-int obtenerMinasCercanas(int fila, int columna, char tablero[ROWS][COLUMNS]) {
-  int conteo = 0, filaInicio, filaFin, columnaInicio, columnaFin;
-  if (fila <= 0) {
-    filaInicio = 0;
-  } else {
-    filaInicio = fila - 1;
-  }
-  if (fila + 1 >= ROWS) {
-    filaFin = ROWS - 1;
-  } else {
-    filaFin = fila + 1;
-  }
-  if (columna <= 0) {
-    columnaInicio = 0;
-  } else {
-    columnaInicio = columna - 1;
-  }
-  if (columna + 1 >= COLUMNS) {
-    columnaFin = COLUMNS - 1;
-  } else {
-    columnaFin = columna + 1;
-  }
-  int m;
-  for (m = filaInicio; m <= filaFin; m++) {
-    int l;
-    for (l = columnaInicio; l <= columnaFin; l++) {
-      if (tablero[m][l] == MINA) 
-        conteo++;
-    }
-  }
-  return conteo;
-}
+    int totalbombs[NUMBOMBS][2]; // stores (x,y) coordinates of all bombs.
+  
+    srand(time(0)); // Seed the random number generator.
 
-int aleatorioEnRango(int minimo, int maximo) { 
-  return minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
-}
-
-void iniciarTablero(char tablero[ROWS][COLUMNS]) {
-  int l;
-  for (l = 0; l < ROWS; l++) {
-    int m;
-    for (m = 0; m < COLUMNS; m++) 
-      tablero[l][m] = ESPACIO_SIN_DESCUBRIR;
-  }
-}
-
-void colocarMina(int fila, int columna, char tablero[ROWS][COLUMNS]) { 
-  tablero[fila][columna] = MINA;
-}
-
-void colocarMinasAleatoriamente(char tablero[ROWS][COLUMNS]) { 
-  int l;
-  for (l = 0; l < CANTIDAD_MINAS; l++) {
-    int fila = aleatorioEnRango(0, ROWS - 1);
-    int columna = aleatorioEnRango(0, COLUMNS - 1);
-    colocarMina(fila, columna, tablero);
-  }
-}
-
-void imprimirEncabezado() {
-  printf("      ");
-  char letra = 'A';
-  int l;
-  for (l = 0; l < COLUMNS; l++) {
-    printf(" %c ", letra);
-    letra++;
-  }
-  printf("\n");
-}
-
-char enteroACaracter(int numero) { 
-  return numero + '0';
-}
-
-void imprimirTablero(char tablero[ROWS][COLUMNS], int deberiaMostrarMinas) {
-  imprimirEncabezado();
-  int numero = 1, l, m;
-  for (l = 0; l < ROWS; l++) {
-    printf(" %2d   ", numero);
-    numero++;
-    char letra = 'A';
-    for (m = 0; m < COLUMNS; m++) {
-      char verdaderonum = ESPACIO_SIN_DESCUBRIR;
-      char numeroActual = tablero[l][m];
-      if (numeroActual == MINA) {
-        verdaderonum = ESPACIO_SIN_DESCUBRIR;
-      } else if (numeroActual == ESPACIO_DESCUBIERTO) {
-        int minasCercanas = obtenerMinasCercanas(l, m, tablero);
-        verdaderonum = enteroACaracter(minasCercanas);
-      }
-      if (numeroActual == MINA && (DEBUG || deberiaMostrarMinas)) 
-        verdaderonum = MINA;
-    printf(" %c ", verdaderonum);
-    }
-    printf("\n");
-  }
-}
-
-int abrirCasilla(char columnaLetra, int fila, char tablero[ROWS][COLUMNS]) {
-    int m, l;
-  columnaLetra = toupper(columnaLetra);
-  fila--;
-  int columna = columnaLetra - 'A';
-  assert(columna < COLUMNS && columna >= 0);
-  assert(fila < ROWS && fila >= 0);
-  if (tablero[fila][columna] == MINA) 
-        return MINA_ENCONTRADA;
-  if (tablero[fila][columna] == ESPACIO_DESCUBIERTO) 
-        return ESPACIO_YA_DESCUBIERTO;
-  tablero[fila][columna] = ESPACIO_DESCUBIERTO;
-        return NINGUNO;
-}
-
-int noHayCasillasSinAbrir(char tablero[ROWS][COLUMNS]) { 
-  int l,m;
-  for (l = 0; l < ROWS; l++) {
-    for (m = 0; m < COLUMNS; m++) {
-      char actual = tablero[m][l];
-      if (actual == ESPACIO_SIN_DESCUBRIR) 
-        return 0;
+    // Initialize the current board.
+    for (i=0;i<dimension;i++) {
+        for (j=0;j<dimension;j++) {
+            current_board[i][j] = '_';
+            uncovered_board[i][j] = '_';
         }
-  }
-  return 1;
+    }
+
+    // Randomly choose where the bombs will go.
+    getbombs(totalbombs);
+  
+    // Place the bombs onto the board.
+    for (i=0;i<NUMBOMBS;i++) 
+        uncovered_board[totalbombs[i][0]][totalbombs[i][1]]='*';
+  
+    totalmoves = dimension*dimension - NUMBOMBS;
+ //Continue
+    while (!gameover) {
+
+        printf("Actual board : \n");
+        printboard(current_board);
+        getmove(&x,&y);
+        printf(" %c\n", current_board[7][1]);
+
+        gameover = movement(current_board,uncovered_board,totalbombs,x,y,&totalmoves);
+
+        if ((!gameover) && (totalmoves==0)) {
+            printf(" You win!!\n");
+            gameover = 1;
+        }
+    }
+    return 0;
+}
+void getmove(int *x,int *y) {
+
+    // Read in move.
+    printf("To enter a move type row / space / colum like: 2 3\n");
+    printf ("This is a row ||,  and this is a colum ==\n");
+    printf("Enter your move, (row column) -> ");
+    scanf("%d%d", x, y);
+  
+    while (!valid(*x,*y)) {
+        printf(" Those aren't valid coordinates. Please try again.\n");
+        printf("Enter your move, (row column) -> ");
+        scanf("%d%d", x, y);
+    }
+}
+void printboard(char board[][dimension]) {
+
+    int i,j;
+
+    // Print out dimension labels.
+    printf("    ");
+    for (i=0;i<dimension;i++)
+        printf("%d ", i);
+    printf("\n\n");
+
+    //  actual board.
+    for (i=0;i<dimension;i++) {
+    
+        printf("%d   ", i);
+        for (j=0;j<dimension;j++)
+            printf("%c ",board[i][j]); 
+        printf("\n");
+    }
+}
+int movement(char board[][dimension], char realboard[][dimension],
+            int totalbombs[][2], int row, int column, int *totalmoves) {
+
+  int i, j, num;
+    if (realboard[row][column]=='*') {
+    
+        board[row][column]='*';
+        for (i=0;i<NUMBOMBS;i++) 
+            board[totalbombs[i][0]][totalbombs[i][1]]='*';
+    
+        printboard(board);
+        printf("You lose!\n");
+        return 1;
+    }
+    // square already chosen.
+    else if (board[row][column]!='_') {
+    
+        printf("That square as already been cleared.\n");
+        return 0;
+    }
+    // Execute a normal non-losing move.
+    else {
+ 
+        // Calculate the number of adjacent bombs, and place this number on the regular board.
+        num = numberbombs(row, column, totalbombs);
+        (*totalmoves)--;
+        
+        board[row][column]=(char)(num+'0');
+
+        if (num == 0) {
+   
+            for (i=-1;i<2;i++) {
+	            for (j=-1;j<2;j++) {
+	  
+	                if (valid(row+i,column+j) && (board[row+i][column+j]=='_'))
+	                    movement(board, realboard, totalbombs, row+i, column+j, totalmoves);
+	            }
+            }
+        }
+      return 0;
+    }
+}
+int valid(int row, int column) {
+    if (row < 0) return 0;
+    
+    else if (row >= dimension) return 0;
+  
+    else if (column < 0) return 0;
+  
+    else if (column >= dimension) return 0;
+    
+    else return 1;
+}
+int numberbombs(int row ,int column ,int totalbombs[][2]) {
+
+int i;
+int count = 0;
+    for (i=0;i<NUMBOMBS;i++) {
+
+        if ((abs(row-totalbombs[i][0])<=1+TOLERANCE) && (abs(column-totalbombs[i][1])<=1+TOLERANCE)) {
+            count++; 
+        }  
+    }
+    return count;
+}
+void getbombs(int bomblist[][2]) {
+  
+int i;
+int help;
+int curbombs[dimension*dimension];
+  
+    for (i=0; i<dimension*dimension; i++)
+        curbombs[i] = 0;
+    i = 0;
+    while(i<NUMBOMBS) { // Continue until all random bombs have been created.
+    
+        help = rand()%(dimension*dimension);
+
+        if (curbombs[help]==0) {// Only add the bomb if it is not a duplicate.
+      
+            bomblist[i][0] = help/dimension;
+            bomblist[i][1] = help%dimension;
+            i++;
+            curbombs[help] = 1;
+        }
+    }
 }
