@@ -6,7 +6,7 @@ Agregar tambien el archvo .h para que funcione
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
-#include "library.h"
+#include "calc.h"
 
 int main() {
   
