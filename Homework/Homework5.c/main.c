@@ -1,7 +1,6 @@
-Agregar tambien el archvo .h para que funcione
- Primero debes de poner la fila y despues la columna (separados de un espacio) like : 3 4
- El tamaño del board ya esta definido y es de 10x10 
- */
+//Agregar tambien el archvo .h para que funcione//
+
+ 
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
