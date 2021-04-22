@@ -1,3 +1,5 @@
+//firstyou have to include the library "calc.h" in the "Homework_5.c"file, to run the program
+
 #include <stdio.h>   
 #include <stdlib.h>  
 #include <ctype.h>   
