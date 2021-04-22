@@ -2,7 +2,7 @@
 #include <stdlib.h>  
 #include <ctype.h>   
 #include <assert.h>  
-#include "function.h"
+#include "calc.h"
 
 #define MINA_ENCONTRADA 1
 #define ESPACIO_YA_DESCUBIERTO 2
