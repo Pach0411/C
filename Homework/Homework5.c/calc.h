@@ -1,6 +1,6 @@
 #define forloop(i, x) for(i = 0; i != x; i++)
-#define BOMB -1  //set bombs//
-#define CONTL 10  //number of rows and columns (counter line)//
+#define BOMB -1  //numero de bombas//
+#define CONTL 10  //numero de filas y columnas (linea de contador)//
 
 #define LOST 'l' 
 #define WON 'O'
