@@ -82,7 +82,7 @@ int main()
 {
   extern char line[];
   node* n = NULL;
-  node* binarytree = NULL; 
+  node* BinaryTree = NULL; 
   int i;
   int l = 0;
   char* u;
