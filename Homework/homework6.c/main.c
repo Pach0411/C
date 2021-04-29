@@ -93,7 +93,7 @@ int main()
   printf("WELCOME!!!\n\n");
   printf("To add a user please use the next expresion: add (user password)\n\n");
   printf("To remove a user please use the next expresion: del (user password)\n\n");
-  printf("To clarify dont use the () in the expresions (user password) those are only to tell that you are going to write the name of the user and then  the password\n\n");
+  printf("To clarify  use the () in the expresions (user password) those are for don't have any problem and to tell that you are going to write the name of the user and then  the password\n\n");
   printf("To see the names of the users arranged alphabetically please use the next expression: view\n\n");
   printf("This program takes into account upper and lower case letters (That means that for example: ALEX is not the same as alex)\n\n");
   printf("Please make sure that your input is correct before accepting the user\n\n");
