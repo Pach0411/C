@@ -1,9 +1,9 @@
-/* Funciona en onlinegbd.com primero agrega este archivo y despues en otro el struct.h y le picas run y es todo:) */
+/* Funciona en onlinegbd.com primero agrega este archivo y despues en otro el BinaryTree.h y le picas run y es todo:) */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "struct.h"
+#include "BinaryTree.h"
 
 
 node* insert(char* u, char* p, node* pos, int d) 
