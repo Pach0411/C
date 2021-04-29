@@ -17,5 +17,5 @@ node* insert(char* u, char* p, node* pos, int d);
 void delete(node* position, char* a, char* p, int* n);
 void alpha(node* position);
 
-/* This program was made with the help of https://github.com/satuelisa/C/tree/main/Ch6, Brian W. Kernighan, Dennis M. Ritchie - The C Programming Language, Second Edition (1988) and
-with the help of rulgamer07 */
+/*Este programa fue creado con ayuda del repo de la profe que es https://github.com/satuelisa/C/tree/main/Ch6, Brian W. Kernighan, Dennis M. Ritchie - The C Programming Language, Second Edition (1988) y tambien
+con ayuda de mis compañeros de clase como rulgamer07 y Victor Villegas*/
