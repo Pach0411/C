@@ -122,7 +122,7 @@ int main()
       }
       
       indicator=0;
-      delete(binarytree, u, p, &indicator);
+      delete(BinaryTree, u, p, &indicator);
       if (indicator==0)
       {
           printf("The user wasn't removed plese check that the user name and/or the password are correct\n\n");
@@ -148,10 +148,10 @@ int main()
       
       if (strlen(password)>0&&strlen(user)>0)
       {
-      n = insert(u,p, binarytree, 0); 
-	  if (binarytree == NULL) 
+      n = insert(u,p, BinaryTree, 0); 
+	  if (BinaryTree == NULL) 
 	  {
-	    binarytree = n;
+	    BinaryTree = n;
 	    }
 	   spacecounter=0;
       }
@@ -163,7 +163,7 @@ int main()
       
     else if (strstr(line, "view") != NULL&&strlen(line)==4) 
     {
-      alpha(binarytree);
+      alpha(BinaryTree);
       printf("\n\n");
       spacecounter=0;
     }
