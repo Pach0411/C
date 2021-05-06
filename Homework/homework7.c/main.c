@@ -4,6 +4,7 @@
    y al igual debes de ponerlos con el nombre con el cual los encontraras que son "main.c, structure.c, instructions.h" y ya:) */
 
 /* CONTRASEÑA DE ADMIN ES 007 */
+
 #include "instructions.h"
 
 int main(){
@@ -118,3 +119,4 @@ int main(){
         exit(1);
     }
 }
+
