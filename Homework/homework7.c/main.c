@@ -120,3 +120,5 @@ int main(){
     }
 }
 
+/*Este programa fue creado con ayuda del repo de la profe que es https://github.com/satuelisa/C/tree/main/Ch6, Brian W. Kernighan, Dennis M. Ritchie - The C Programming Language, Second Edition (1988) y tambien
+con ayuda de mis compañeros de clase como Victor Villegas*/
