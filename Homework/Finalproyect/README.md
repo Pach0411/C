@@ -6,5 +6,10 @@ This is the famous game of checkers in which you have 12 tiles and it is played 
 - Then you will choose if you want to move the checker to the left or to the right also if you want to eat a checker of your opposite.
 - This game will be to play with you and a friend or just because this game is developed for you to play against someone else on the same console or cooperatively.
 
+## Instructions.
+- First will ask the name of the 2 players like player 1 and player 2.
+- Then like the instructions of the game the player who took the white checker, it will start.
+- Finally you will chose the coordenates of the checker you want to move.
+
 ## Design.
 To see the design you can click [here.](https://github.com/Pach0411/C/blob/main/Homework/Finalproyect/185874433_322275179310338_4890635374627291553_n.jpg "here.")
