@@ -28,8 +28,8 @@
 [Click here to see the video of my Final Project.](https://youtu.be/JxmLmsTfFjw "here.")
 
 ## References
-- Rules of the game Checkers https://ctycms.com/mn-rochester/docs/checkers-instructions.pdf
-- Tutorial of how to play Checkers: https://www.youtube.com/watch?v=ScKIdStgAfU
+- [Rules of the game Checkers](https://ctycms.com/mn-rochester/docs/checkers-instructions.pdf "here")
+- [Tutorial of how to play Checkers](https://www.youtube.com/watch?v=ScKIdStgAfU "here")
 
 ## Contact
 Of any doubt or problem with the game you can contact me at Discord like **Pach#1353**
