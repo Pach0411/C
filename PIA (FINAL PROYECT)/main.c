@@ -1,3 +1,6 @@
+/*This program runs without problems in any of your code editor, at onlinegdb.com I don't know because it presents few notorious problems such as
+it is when putting the name of each player but hey if you have CodeBlock or Visual Studio I recommend you try it there to have a better gameplay...*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
