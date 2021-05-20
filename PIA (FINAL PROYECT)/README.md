@@ -1,5 +1,7 @@
-# Final Proyect : Checkers :chess_pawn::joystick:
-This is the famous game of checkers in which you have 12 tiles and it is played on the same board as chess, the only difference is that these checkers only move diagonally and eat diagonally just as they can eat 1 or 2 or even 3 times in a row, as they must always be at the beginning in the same boxes either x or y.
+# Final Project : Checkers :chess_pawn::joystick:
+>This is the famous game of checkers in which you have 12 tiles and it is played on the same board as chess, the only difference is that these checkers only move diagonally and eat diagonally just as they can eat 1 or 2 or even 3 times in a row, as they must always be at the beginning in the same boxes either x or y.
+>
+>Link of the Project on [Github](https://github.com/Pach0411/C/blob/main/PIA%20(FINAL%20PROYECT)/main.c "here")
 
 ## Table of Contents
 * [Functions](#Functions)
@@ -23,7 +25,7 @@ This is the famous game of checkers in which you have 12 tiles and it is played 
 5. You win if you eat all the pieces of your opponent.
 
 ## Video of how it works
-[Click here to see the video of my Final Proyect.](https://youtu.be/JxmLmsTfFjw "here.")
+[Click here to see the video of my Final Project.](https://youtu.be/JxmLmsTfFjw "here.")
 
 ## References
 - Rules of the game Checkers https://ctycms.com/mn-rochester/docs/checkers-instructions.pdf
