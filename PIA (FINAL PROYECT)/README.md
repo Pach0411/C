@@ -36,17 +36,17 @@
 >Of any doubt or problem with the game you can contact me at Discord like **Pach#1353**
 
 ## Auto-Evaluation
->**1. Complexity 3**.(It is not very complicated, only very repetitive in some steps since you must put how each black and white piece will work and also at the time of becoming a queen that more movements are assigned).
+>**1. Complexity 2**.(It is not very complicated, only very repetitive in some steps since you must put how each black and white piece will work and also at the time of becoming a queen that more movements are assigned).
 >
 >**2. Functionality 2**. (They only have small problems at the time of not being able to do it in an encoder with the necessary memory to be able to reflect the whole game without any detail, a great example is that in gbd online it crashes and doesn't let you put the name of one player, but the game runs at the best way).
 >
 >**3. Code 1**. (At first I didn't know whether to leave it in Spanish or in English both the instructions and the characteristics and I started it in Spanish and at the time of changing it in English I didn't give it the necessary time to change the idiom at all).
 >
->**4. Storage 3**. (I use the structs and stdio at the best way).
+>**4. Storage 2**. (It's some limitated).
 >
 >**5. Documentation 3**. (I check my entire project more than once as well as try to make it of better quality and that everything can be seen in the video and with the best quality).
 >
->**CF 12 de 15**
+>**CF 10 de 15**
 
 
 
