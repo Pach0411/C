@@ -44,7 +44,7 @@
 >
 >**4. Storage 3**. (I use the structs and stdio at the best way).
 >
->**5. Documentation 3**. (I check my entire project more than once as well as try to make it of better quality and that everything can be seen in the video and with the best >quality).
+>**5. Documentation 3**. (I check my entire project more than once as well as try to make it of better quality and that everything can be seen in the video and with the best quality).
 
 
 
